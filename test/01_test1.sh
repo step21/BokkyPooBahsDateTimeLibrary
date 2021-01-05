@@ -52,8 +52,8 @@ echo "$DIFFS1" | tee -a $TEST1OUTPUT
 
 solc_0.6.0 --version | tee -a $TEST1OUTPUT
 
-echo "var dateTimeLibOutput=`solc_0.6.0 --optimize --pretty-json --combined-json abi,bin,interface $DATETIMELIBSOL`;" > $DATETIMELIBJS
-echo "var testDateTimeOutput=`solc_0.6.0 --optimize --pretty-json --combined-json abi,bin,interface $TESTDATETIMESOL`;" > $TESTDATETIMEJS
+echo "var dateTimeLibOutput=`solc-v0.8.0 --optimize --pretty-json --combined-json abi,bin,interface $DATETIMELIBSOL`;" > $DATETIMELIBJS
+echo "var testDateTimeOutput=`solc-v0.8.0 --optimize --pretty-json --combined-json abi,bin,interface $TESTDATETIMESOL`;" > $TESTDATETIMEJS
 ../scripts/solidityFlattener.pl --contractsdir=../contracts --mainsol=$TESTDATETIMESOL --outputsol=$TESTDATETIMEFLATTENED --verbose | tee -a $TEST1OUTPUT
 
 if [ "$MODE" = "compile" ]; then

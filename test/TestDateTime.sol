@@ -1,4 +1,4 @@
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.0;
 
 import "BokkyPooBahsDateTimeLibrary.sol";
 
@@ -16,7 +16,7 @@ contract TestDateTime {
     uint public nextYear;
 
     function test() public {
-        uint today = now;
+        uint today = block.timestamp;
         nextYear = today.addYears(1);
     }
 
